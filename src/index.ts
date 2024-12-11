@@ -1,8 +1,9 @@
+import * as dotenv from 'dotenv';
 import { exec_file } from "./file";
 import { exec_prompt } from "./prompt";
 import { exec_dns } from "./dns";
-import * as dotenv from 'dotenv';
 import { server } from "./server";
+import { exec_querystring } from "./querystring";
 
 dotenv.config();
 
@@ -21,4 +22,7 @@ exec_prompt()
 // exec_dns();
 
 // HTTP
-server(Number(process.env.PORT));
+//server(Number(process.env.PORT));
+
+// querystring
+exec_querystring()
