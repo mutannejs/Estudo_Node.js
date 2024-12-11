@@ -1,0 +1,13 @@
+{
+  "name": "ada-node",
+  "version": "1.0.0",
+  "scripts": {
+    "server": "npx nodemod dist/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  }
+}
