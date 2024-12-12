@@ -1,6 +1,6 @@
 import * as rl from 'readline';
 
-class promptRl {
+export default class promptRl {
     private prompt: rl.Interface;
 
     public constructor() {
@@ -24,26 +24,19 @@ class promptRl {
             });
     }
 
+    public write(data: string) {
+        return new Promise<string | void>(
+            (resolve, reject) => {
+                try {
+                    resolve( this.prompt.write(data) );
+                } catch (error) {
+                    reject( new Error('Erro no write!') );
+                }
+            }
+        )
+    }
+
     public close() {
         this.prompt.close();
-    }
-}
-
-export default async function exec_prompt() {
-    const prompt = new promptRl();
-
-    try {
-        try {
-            const name = await prompt.question('Qual seu nome?');
-            console.log('Prazer ' + name);
-            const age = await prompt.question('E sua idade?');
-            console.log('Legal que seja ' + Number(age));
-            return;
-        } catch (error) {
-            console.log("Algo deu errado :(");
-            console.error((error as Error).message);
-        }
-    } finally {
-        return prompt.close();
     }
 }
