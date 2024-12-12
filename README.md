@@ -31,3 +31,5 @@ npm run server # deve ser executado apenas ao subir um servidor, para que ele at
 * http status code: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Status](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 
 * Extensão do VS Code para fazer requisição: Thunder client
+
+* Extensão do VS Code para executar JS de maneira mais simples: Code runnner

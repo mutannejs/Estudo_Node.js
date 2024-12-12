@@ -1,4 +1,3 @@
-import * as rl from 'node:readline';
 import * as dotenv from 'dotenv';
 import promptRl from "./node/prompt";
 import exec_file from "./node/file";
