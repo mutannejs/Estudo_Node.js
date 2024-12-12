@@ -1,7 +1,7 @@
 import * as path from 'node:path';
 import * as fs from 'node:fs';
 
-export function exec_file() {
+export default function exec_file() {
     console.time("leitura");
     console.time("escrita");
     const filePath = path.join(process.cwd(), 'assets', 'texto_exemplo.txt');

@@ -7,7 +7,7 @@ interface IBODY {
 const sports = ["soccer", "tennis", "basketball", "handball"];
 let counter = 1;
 
-export function server(port: number) {
+export default function server(port: number) {
 
     const server = http.createServer(async (req, res) => {
         const { url, method } = req;

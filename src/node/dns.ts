@@ -1,6 +1,6 @@
 import * as dns from 'node:dns';
 
-export async function exec_dns() {
+export default async function exec_dns() {
     const urlGoogle = 'google.com';
 
     const defaultServer = () => {

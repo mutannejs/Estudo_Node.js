@@ -1,9 +1,11 @@
 import * as dotenv from 'dotenv';
-import { exec_file } from "./file";
-import { exec_prompt } from "./prompt";
-import { exec_dns } from "./dns";
-import { server } from "./server";
-import { exec_querystring } from "./querystring";
+import exec_file from "./node/file";
+import exec_prompt from "./node/prompt";
+import exec_dns from "./node/dns";
+import server from "./node/server";
+import exec_querystring from "./node/querystring";
+import exec_crypto from './node/crypto';
+import exec_luxon from './extern/luxon';
 
 dotenv.config();
 
@@ -25,4 +27,10 @@ exec_prompt()
 //server(Number(process.env.PORT));
 
 // querystring
-exec_querystring()
+// exec_querystring()
+
+// crypto
+// exec_crypto();
+
+// Luxon
+exec_luxon();

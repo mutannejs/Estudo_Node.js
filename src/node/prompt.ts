@@ -29,7 +29,7 @@ class promptRl {
     }
 }
 
-export async function exec_prompt() {
+export default async function exec_prompt() {
     const prompt = new promptRl();
 
     try {

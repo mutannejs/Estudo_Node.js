@@ -1,6 +1,6 @@
 import * as qs from 'node:querystring';
 
-export function exec_querystring() {
+export default function exec_querystring() {
     const base = 'https://siteviagens.com/';
     const paramsUrl = {
         state: "São Paulo",
