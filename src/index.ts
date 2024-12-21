@@ -1,13 +1,20 @@
 import * as dotenv from 'dotenv';
+
 import promptRl from "./node/prompt";
 import exec_file from "./node/file";
 import exec_dns from "./node/dns";
 import server from "./node/server";
 import exec_querystring from "./node/querystring";
 import exec_crypto from './node/crypto';
+
 import exec_luxon from './extern/luxon';
+
 import for_in_for_of from './javascript/for_in_for_of';
 import classes from './javascript/classes';
+
+import inheritance from './poo/poo';
+import mixin from './poo/mixin';
+import json from './poo/json';
 
 dotenv.config();
 
@@ -16,23 +23,26 @@ async function whatToExecute() {
 
     try {
         const answer = await prompt.question(
-            'O que você deseja executar?\n' +
-            '(0) exec_file\n' +
-            '(1) exec_dns\n' +
-            '(2) server\n' +
-            '(3) exec_querystring\n' +
-            '(4) exec_crypto\n' +
-            '(5) exec_luxon\n' +
-            '(6) for_in_for_of\n' +
-            '(7) classes\n'
-        );
+            'O que você deseja executar?\n'.concat(
+                '(0) exec_file\n',
+                '(1) exec_dns\n',
+                '(2) server\n',
+                '(3) exec_querystring\n',
+                '(4) exec_crypto\n',
+                '(5) exec_luxon\n',
+                '(6) for_in_for_of\n',
+                '(7) classes\n',
+                '(8) herança\n',
+                '(9) mixin\n',
+                '(10) json\n',
+            ));
 
         prompt.write('\n');
 
         let num = answer.match(/\d/) ? Number(answer) : null;
-        if ( num == null || num < 0 || num > 7 ) {
-            throw new Error(`Opção ${answer} inválida\n`)
-        }
+        // if ( num == null || num < 0 || num > 7 ) {
+        //     throw new Error(`Opção ${answer} inválida\n`)
+        // }
 
         switch (num) {
             case 0:
@@ -56,9 +66,20 @@ async function whatToExecute() {
             case 6:
                 for_in_for_of();
                 break;
-            default:
+            case 7:
                 classes();
                 break;
+            case 8:
+                inheritance();
+                break;
+            case 9:
+                mixin();
+                break;
+            case 10:
+                json();
+                break;
+            default:
+                throw new Error(`Opção ${answer} inválida\n`);
         }
     } catch (error) {
         prompt.write((error as Error).message);

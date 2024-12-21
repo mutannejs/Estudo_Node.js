@@ -2,16 +2,18 @@
   "name": "ada-node",
   "version": "1.0.0",
   "scripts": {
-    "server": "npx nodemon dist/index.js"
+    "server": "npx ts-node-dev src/express/server.ts"
   },
   "devDependencies": {
+    "@types/express": "^5.0.0",
     "@types/luxon": "^3.4.2",
     "@types/node": "^22.10.1",
-    "nodemon": "^3.1.7",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.7.2"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
+    "express": "^4.21.2",
     "luxon": "^3.5.0"
   }
 }
