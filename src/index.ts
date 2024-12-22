@@ -16,6 +16,9 @@ import inheritance from './poo/poo';
 import mixin from './poo/mixin';
 import json from './poo/json';
 
+import serverI from './express/serverI';
+import serverII from './express/serverII';
+
 dotenv.config();
 
 async function whatToExecute() {   
@@ -35,6 +38,8 @@ async function whatToExecute() {
                 '(8) herança\n',
                 '(9) mixin\n',
                 '(10) json\n',
+                '(11) server I\n',
+                '(12) server II\n',
             ));
 
         prompt.write('\n');
@@ -77,6 +82,12 @@ async function whatToExecute() {
                 break;
             case 10:
                 json();
+                break;
+            case 11:
+                serverI();
+                break;
+            case 12:
+                serverII();
                 break;
             default:
                 throw new Error(`Opção ${answer} inválida\n`);

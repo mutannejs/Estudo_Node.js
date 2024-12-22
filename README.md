@@ -10,19 +10,9 @@ Executar:
 
 ```
 npm i # instalar dependências
+tsc
+node dist/index.js
 ```
-
-```
-tsc -w # retranspila o código fonte sempre que uma mudança for feita
-```
-
-```
-npm run server # deve ser executado apenas ao subir um servidor, para que ele atualize a cada modificação no codigo
-```
-
-É interessante manter os dois últimos comandos rodando simultaneamente em terminais diferentes. Ex:
-
-![executando tsc e nodemon](./.github/execucao.png)
 
 ## Recursos
 

@@ -15,6 +15,6 @@ export default function json() {
         url: myuser.url
     }
 
-    const pathNewFileJson = join(__dirname, 'basic_user.json');
+    const pathNewFileJson = join( process.cwd(), 'files', 'basic_user.json');
     writeFileSync(pathNewFileJson, JSON.stringify(basicMyuser, null, 2));
 }
